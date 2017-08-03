@@ -25,3 +25,5 @@ Route::get('/subscriptions', '\App\Http\Controllers\UsersController@subscription
 Route::get('/subscribe', '\App\Http\Controllers\UsersController@subscribe');
 Route::get('/check/subscription', '\App\Http\Controllers\UsersController@checkSubscription');
 Route::get('/estimates', '\App\Http\Controllers\EstimatesController@estimates');
+Route::get('/estimates/played', '\App\Http\Controllers\EstimatesController@played');
+Route::get('/estimates/waiting', '\App\Http\Controllers\EstimatesController@waiting');

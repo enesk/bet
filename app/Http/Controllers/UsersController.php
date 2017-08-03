@@ -54,9 +54,14 @@ class UsersController extends Controller
 
     public function unSubscribe(Request $request) {
         $data = $request->all();
+        $user = User::where('token', $data['token'])->first();
 
+        if (empty($user)):
+            return response()->json(['error' => 'Subscription failed']);
+        endif;
+            
         $subscription = SubscriptionUser::where('subscription_id', $data['subscription_id'])->get()->first();
-        $subscription->delte();
+        $subscription->delete();
 
         return response()->json(['success' => 'User unsubscribed!']);
     }

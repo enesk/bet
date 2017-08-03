@@ -35,22 +35,30 @@ class UsersController extends Controller
         $user = User::where('token', $request['token'])->first();
 
         if (empty($user)):
-            return response()->json(['error', 'Subscription failed']);
+            return response()->json(['error' => 'Subscription failed']);
         else:
             $check = SubscriptionUser::where('user_id', $user->id)->get();
             if ($check->isEmpty()):
-                $subscription = Subscription::find($request['subscription_id']);
                 $endDate = strtotime(date('Y-m-d', strtotime("+3 days")));
                 $subscribed = SubscriptionUser::create([
                     'user_id' => $user->id,
-                    'subscription_id' => $subscription->id,
+                    'subscription_id' => $request['subscription_id'],
                     'ends_at' => $endDate
                 ]);
-                return response()->json(['success', $subscribed]);
+                return response()->json(['success' => $subscribed]);
             else:
-                return response()->json(['error', 'You are already premium member!']);
+                return response()->json(['error' => 'You are already premium member!']);
             endif;
         endif;
+    }
+
+    public function unSubscribe(Request $request) {
+        $data = $request->all();
+
+        $subscription = SubscriptionUser::where('subscription_id', $data['subscription_id'])->get()->first();
+        $subscription->delte();
+
+        return response()->json(['success' => 'User unsubscribed!']);
     }
 
     public function login(Request $request)

@@ -64,5 +64,4 @@ class UsersController extends Controller
         endif;
     }
 
-
 }

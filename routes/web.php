@@ -24,3 +24,4 @@ Route::get('/register', '\App\Http\Controllers\RegisterController@register');
 Route::get('/subscriptions', '\App\Http\Controllers\UsersController@subscriptions');
 Route::get('/subscribe', '\App\Http\Controllers\UsersController@subscribe');
 Route::get('/check/subscription', '\App\Http\Controllers\UsersController@checkSubscription');
+Route::get('/estimates', '\App\Http\Controllers\EstimatesController@estimates');

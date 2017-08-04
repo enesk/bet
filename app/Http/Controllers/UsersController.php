@@ -39,12 +39,11 @@ class UsersController extends Controller
         else:
             $check = SubscriptionUser::where('user_id', $user->id)->get();
             if ($check->isEmpty()):
-                $endDate = strtotime(date('Y-m-d', strtotime("+3 days")));
                 $subscribed = SubscriptionUser::create([
                     'user_id' => $user->id,
                     'subscription_id' => $request['subscription_id'],
                     'subscription_alias' => $request['subscription_alias'],
-                    'ends_at' => $endDate
+                    'ends_at' => $request['ends_at']
                 ]);
                 return response()->json(['success' => $subscribed]);
             else:

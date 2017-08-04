@@ -43,6 +43,7 @@ class UsersController extends Controller
                 $subscribed = SubscriptionUser::create([
                     'user_id' => $user->id,
                     'subscription_id' => $request['subscription_id'],
+                    'subscription_alias' => $request['subscription_alias'],
                     'ends_at' => $endDate
                 ]);
                 return response()->json(['success' => $subscribed]);

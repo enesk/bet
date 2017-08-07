@@ -9,23 +9,26 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class EstimatesController extends Controller {
+class EstimatesController extends Controller
+{
 
     public function __construct(Request $request)
     {
     }
 
-    public function estimates(Request $request) {
+    public function estimates(Request $request)
+    {
         $message = ['error' => 'Authentication failed!'];
         $data = $request->all();
-        if(!isset($data['token'])):
+        if (!isset($data['token'])):
             return response()->json($message);
         endif;
         $check = User::where('token', $data['token'])->get();
-        if($check->isEmpty()):
+        if ($check->isEmpty()):
             return response()->json($message);
         endif;
 
@@ -76,14 +79,15 @@ class EstimatesController extends Controller {
         return response()->json($data);
     }
 
-    public function played(Request $request) {
+    public function played(Request $request)
+    {
         $message = ['error' => 'Authentication failed!'];
         $data = $request->all();
-        if(!isset($data['token'])):
+        if (!isset($data['token'])):
             return response()->json($message);
         endif;
         $check = User::where('token', $data['token'])->get();
-        if($check->isEmpty()):
+        if ($check->isEmpty()):
             return response()->json($message);
         endif;
 
@@ -121,18 +125,19 @@ class EstimatesController extends Controller {
         return response()->json($data);
     }
 
-    public function waiting(Request $request) {
+    public function waiting(Request $request)
+    {
         $message = ['error' => 'Authentication failed!'];
         $data = $request->all();
-        if(!isset($data['token'])):
+        if (!isset($data['token'])):
             return response()->json($message);
         endif;
         $check = User::where('token', $data['token'])->get();
-        if($check->isEmpty()):
+        if ($check->isEmpty()):
             return response()->json($message);
         endif;
 
-        $data =   [
+        $data = [
             'country' => 'Deutschland',
             'leauge' => 'Bundesliga',
             'category' => 'Basketball',
@@ -149,7 +154,5 @@ class EstimatesController extends Controller {
 
         return response()->json($data);
     }
-
-
 
 }

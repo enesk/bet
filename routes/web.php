@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/admin/subscriptions', '\App\Http\Controllers\Admin\SubscriptionsCrudController');
+Route::resource('/admin/subscriptions', '\App\Http\Controllers\Admin\CountriesCrudController');
 
 
 
@@ -28,3 +29,4 @@ Route::get('/check/subscription', '\App\Http\Controllers\UsersController@checkSu
 Route::get('/estimates', '\App\Http\Controllers\EstimatesController@estimates');
 Route::get('/estimates/played', '\App\Http\Controllers\EstimatesController@played');
 Route::get('/estimates/waiting', '\App\Http\Controllers\EstimatesController@waiting');
+Route::get('/test', '\App\Http\Controllers\EstimatesController@test');

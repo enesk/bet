@@ -68,6 +68,7 @@ class UsersController extends Controller
         else:
             $check = SubscriptionUser::where('user_id', $user->id)->get();
             if ($check->isEmpty()):
+                dd('xx');
                 $subscribed = SubscriptionUser::create([
                     'user_id' => $user->id,
                     'subscription_id' => $request['subscription_id'],

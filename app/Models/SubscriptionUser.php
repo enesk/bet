@@ -21,7 +21,7 @@ class SubscriptionUser extends Model
     // protected $guarded = ['id'];
     protected $fillable = ['id', 'user_id', 'subscription_id', 'subscription_alias', 'ends_at', 'created_at', 'updated_at'];
     // protected $hidden = [];
-    // protected $dates = [];
+    // protected $dates = []; 
 
     /*
     |--------------------------------------------------------------------------

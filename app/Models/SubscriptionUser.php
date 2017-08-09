@@ -19,7 +19,7 @@ class SubscriptionUser extends Model
     protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['user_id', 'subscription_id', 'subscription_alias', 'ends_at', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'user_id', 'subscription_id', 'subscription_alias', 'ends_at', 'created_at', 'updated_at'];
     // protected $hidden = [];
     // protected $dates = [];
 

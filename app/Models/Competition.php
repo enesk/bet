@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Matches extends Model
+class Competition extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Matches extends Model
     |--------------------------------------------------------------------------
     */
 
-    //protected $table = 'matchess';
+    protected $table = 'competitions';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

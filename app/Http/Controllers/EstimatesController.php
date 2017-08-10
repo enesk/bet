@@ -34,7 +34,7 @@ class EstimatesController extends Controller
             return response()->json($message);
         endif;
 
-        $premium = SubscriptionUser::where('user_id', $user->id)->get();
+        $premium = SubscriptionUser::where('user_id', $user->first()->id)->get();
         if ($premium->isNotEmpty()):
             $advice = 'Über 2.5 Tore';
         endif;

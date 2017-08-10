@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Country;
+use App\Models\SubscriptionUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,14 +25,19 @@ class EstimatesController extends Controller
     {
         $message = ['error' => 'Authentication failed!'];
         $data = $request->all();
+        $advice = false;
         if (!isset($data['token'])):
             return response()->json($message);
         endif;
-        $check = User::where('token', $data['token'])->get();
-        if ($check->isEmpty()):
+        $user = User::where('token', $data['token'])->get();
+        if ($user->isEmpty()):
             return response()->json($message);
         endif;
 
+        $premium = SubscriptionUser::where('user_id', $user->id)->get();
+        if ($premium->isNotEmpty()):
+            $advice = 'Über 2.5 Tore';
+        endif;
         $data = [
             [
                 'country' => 'Deutschland',
@@ -43,7 +49,7 @@ class EstimatesController extends Controller
                 'rate' => '2.32',
                 'trust' => '70',
                 'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
+                'advice' => $advice,
                 'played' => 0,
                 'won' => 0
             ],
@@ -57,8 +63,8 @@ class EstimatesController extends Controller
                 'rate' => '2.32',
                 'trust' => '70',
                 'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
+                'advice' => $advice,
+                'played' => 0,
                 'won' => 0
             ],
             [
@@ -71,9 +77,9 @@ class EstimatesController extends Controller
                 'rate' => '2.32',
                 'trust' => '70',
                 'image' => 'http://wididns.com/bet/public/assets/img/flags/italy.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
+                'advice' => $advice,
+                'played' => 0,
+                'won' => 0,
             ],
         ];
         return response()->json($data);

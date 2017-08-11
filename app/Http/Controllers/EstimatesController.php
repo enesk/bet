@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Competition;
 use App\Models\Country;
 use App\Models\SubscriptionUser;
 use App\Models\User;
@@ -38,190 +39,24 @@ class EstimatesController extends Controller
             return response()->json($message);
         endif;
 
-        $data = [
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'FC Bayern München',
-                'away_team' => 'Karlsruhe SC',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/italy.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 0
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => 'Über 2.5 Tore',
-                'played' => 1,
-                'won' => 1,
-            ],
-        ];
+        $data = [];
+        $competitions = Competition::where('played', 1)->get();
+        foreach($competitions as $competition):
+            $data[] = [
+                'country' => $competition->country->name,
+                'leauge' => $competition->league->name,
+                'category' => $competition->category->name,
+                'home_team' => $competition->home_team,
+                'away_team' => $competition->away_team,
+                'start_date' => strtotime($competition->start_time),
+                'rate' => $competition->rate,
+                'trust' => $competition->trust,
+                'image' => env('APP_URL').'/'.'assets/img/flags/italy.png',
+                'advice' => $competition->advice->name,
+                'played' => $competition->played,
+                'won' => $competition->won
+            ];
+        endforeach;
 
         return response()->json($data);
     }
@@ -238,55 +73,30 @@ class EstimatesController extends Controller
         if ($user->isEmpty()):
             return response()->json($message);
         endif;
+        $data = [];
 
-        $premium = SubscriptionUser::where('user_id', $user->first()->id)->get();
-        if ($premium->isNotEmpty()):
-            $advice = 'Über 2.5 Tore';
-        endif;
-        $data = [
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
+        $competitions = Competition::where('played', 1)->get();
+        foreach($competitions as $competition):
+            $premium = SubscriptionUser::where('user_id', $user->first()->id)->get();
+            if ($premium->isNotEmpty()):
+                $advice = $competition->advice->name;
+            endif;
+            $data[] = [
+                'country' => $competition->country->name,
+                'leauge' => $competition->league->name,
+                'category' => $competition->category->name,
+                'home_team' => $competition->home_team,
+                'away_team' => $competition->away_team,
+                'start_date' => strtotime($competition->start_time),
+                'rate' => $competition->rate,
+                'trust' => $competition->trust,
+                'image' => env('APP_URL').'/'.'assets/img/flags/italy.png',
                 'advice' => $advice,
-                'played' => 0,
-                'won' => 0
-            ],
-            [
-                'country' => 'Deutschland',
-                'leauge' => 'Bundesliga',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
-                'advice' => $advice,
-                'played' => 0,
-                'won' => 0
-            ],
-            [
-                'country' => 'Italien',
-                'leauge' => 'Serie A',
-                'category' => 'Basketball',
-                'home_team' => 'Ajax',
-                'away_team' => 'Nice',
-                'start_date' => '1501783200',
-                'rate' => '2.32',
-                'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/italy.png',
-                'advice' => $advice,
-                'played' => 0,
-                'won' => 0,
-            ],
-        ];
+                'played' => $competition->played,
+                'won' => $competition->won
+            ];
+        endforeach;
+
         return response()->json($data);
     }
 

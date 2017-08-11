@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\CompetitionRequest as StoreRequest;
-use App\Http\Requests\CompetitionRequest as UpdateRequest;
+use App\Http\Requests\CountryRequest as StoreRequest;
+use App\Http\Requests\CountryRequest as UpdateRequest;
 
-class CompetitionCrudController extends CrudController
+class AdvicesCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class CompetitionCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Competition');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/competition');
-        $this->crud->setEntityNameStrings('competition', 'competitions');
+        $this->crud->setModel('App\Models\Advice');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/advices');
+        $this->crud->setEntityNameStrings('advice', 'advices');
 
         /*
         |--------------------------------------------------------------------------

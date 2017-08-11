@@ -24,7 +24,7 @@ class CreateCompetitionsTable extends Migration
             $table->float('rate');
             $table->integer('trust');
             $table->integer('advice_id');
-            $table->integer('plyerd');
+            $table->integer('played');
             $table->integer('won');
             $table->timestamps();
         });

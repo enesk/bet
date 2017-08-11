@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 Route::resource('/admin/subscriptions', '\App\Http\Controllers\Admin\SubscriptionsCrudController');
-Route::resource('/admin/subscriptions', '\App\Http\Controllers\Admin\CountriesCrudController');
-
-
+Route::resource('/admin/countries', '\App\Http\Controllers\Admin\CountriesCrudController');
+Route::resource('/admin/categories', '\App\Http\Controllers\Admin\CategoriesCrudController');
+Route::resource('/admin/leagues', '\App\Http\Controllers\Admin\LeaguesCrudController');
+Route::resource('/admin/advices', '\App\Http\Controllers\Admin\AdvicesCrudController');
+Route::resource('/admin/competitions', '\App\Http\Controllers\Admin\CompetitionsCrudController');
 
 Route::get('/login', '\App\Http\Controllers\UsersController@login');
 Route::get('/register', '\App\Http\Controllers\RegisterController@register');

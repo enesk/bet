@@ -51,7 +51,7 @@ class EstimatesController extends Controller
                 'start_date' => strtotime($competition->start_time),
                 'rate' => $competition->rate,
                 'trust' => $competition->trust,
-                'image' => env('APP_URL').'/'.'assets/img/flags/italy.png',
+                'image' => env('APP_URL').'/'.$competition->country->url,
                 'advice' => $competition->advice->name,
                 'played' => $competition->played,
                 'won' => $competition->won
@@ -90,7 +90,7 @@ class EstimatesController extends Controller
                 'start_date' => strtotime($competition->start_time),
                 'rate' => $competition->rate,
                 'trust' => $competition->trust,
-                'image' => env('APP_URL').'/'.'assets/img/flags/italy.png',
+                'image' => env('APP_URL').'/'.$competition->country->url,
                 'advice' => $advice,
                 'played' => $competition->played,
                 'won' => $competition->won

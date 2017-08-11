@@ -48,7 +48,7 @@ class EstimatesController extends Controller
                 'start_date' => '1501783200',
                 'rate' => '2.32',
                 'trust' => '70',
-                'image' => 'http://wididns.com/bet/public/assets/img/flags/germany.png',
+                'image' => 'http://wididns.com/bet/public/assets/img/flags/italy.png',
                 'advice' => 'Über 2.5 Tore',
                 'played' => 1,
                 'won' => 0

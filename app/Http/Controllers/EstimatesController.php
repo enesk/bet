@@ -75,7 +75,7 @@ class EstimatesController extends Controller
         endif;
         $data = [];
 
-        $competitions = Competition::where('played', 1)->get();
+        $competitions = Competition::where('played', 0)->get();
         foreach($competitions as $competition):
             $premium = SubscriptionUser::where('user_id', $user->first()->id)->get();
             if ($premium->isNotEmpty()):

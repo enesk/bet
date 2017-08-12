@@ -32,3 +32,7 @@ Route::get('/estimates', '\App\Http\Controllers\EstimatesController@estimates');
 Route::get('/estimates/played', '\App\Http\Controllers\EstimatesController@played');
 Route::get('/estimates/waiting', '\App\Http\Controllers\EstimatesController@waiting');
 Route::get('/test', '\App\Http\Controllers\EstimatesController@test');
+
+Route::get('/pages/imprint', '\App\Http\Controllers\PagesController@imprint');
+Route::get('/pages/agb', '\App\Http\Controllers\PagesController@agb');
+

@@ -36,3 +36,4 @@ Route::get('/test', '\App\Http\Controllers\EstimatesController@test');
 Route::get('/pages/imprint', '\App\Http\Controllers\PagesController@imprint');
 Route::get('/pages/agb', '\App\Http\Controllers\PagesController@agb');
 
+ 

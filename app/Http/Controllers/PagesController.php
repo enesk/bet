@@ -8,8 +8,8 @@ class PagesController extends Controller
 
     public function imprint()
     {
-        $imprint = '<h1>Impressum</h1> <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2> <p>Christoph Schmid<br />
-Gesch&auml;ftsf&uuml;hrer<br /> Herrenstr. 7<br /> 76437 Rastatt </p> <h2>Kontakt:</h2> <table><tr>
+        $imprint = '<h1>Impressum</h1> <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2> <p>Ferhat Sevgili, Enes Kul<br />
+Poststr. 8<br /> 76437 Rastatt </p> <h2>Kontakt:</h2> <table><tr>
 <td>Telefon:</td><td>07222 215145</td></tr> <tr><td>E-Mail:</td> <td>info@widimedia.com</td> </tr>
 </table> <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
 Verbraucherschlichtungsstelle teilzunehmen.</p> <h2>Haftung f&uuml;r Inhalte</h2> <p>Als
